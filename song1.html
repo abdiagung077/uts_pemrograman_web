@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6a70c2ce33.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="media/album_cover2.jpeg" alt="song" class="song-img">
+            <h1>Losing Us.</h1>
+            <p>Raissa Anggiani</p>
+
+            <audio id="song">
+                <source src="media/Losing_Us.mp3" type="audio/mp3">
+            </audio>
+            <input type="range" value="0" id="progress">
+
+            <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div onclick="goToNextPage()"> <i class="fa-solid fa-forward"></i></div>
+            </div>
+
+        </div>
+        <div class="playlist">
+            <h2>Next Songs</h2>
+            <ul>
+                <li>
+                    <img src="media/album_cover3.jpeg" alt="Song Image">
+                    <div class="song-info">
+                        <span>My Chemical Romance</span>
+                        <div><i class="fa-solid fa-music"></i></div>
+                        <div><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                </li>
+                <li>
+                    <img src="media/album_cover4.jpeg" alt="Song Image">
+                    <div class="song-info">
+                        <span>La La Land</span>
+                        <div><i class="fa-solid fa-music"></i></div>
+                        <div><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                </li>
+                <li>
+                    <img src="media/album_cover5.jpeg" alt="Song Image">
+                    <div class="song-info">
+                        <span>Falling For You</span>
+                        <div><i class="fa-solid fa-music"></i></div>
+                        <div><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                </li>
+                <li>
+                    <img src="media/album_cover6.jpeg" alt="Song Image">
+                    <div class="song-info">
+                        <span>The Drugs Don't Work</span>
+                        <div><i class="fa-solid fa-music"></i></div>
+                        <div><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                </li>
+                <li>
+                    <img src="media/album_cover7.jpeg" alt="Song Image">
+                    <div class="song-info">
+                        <span>Love You So</span>
+                        <div><i class="fa-solid fa-music"></i></div>
+                        <div><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="additional-info">
+                <div class="info-card">
+                    <img src="media/album_cover7.jpeg" alt="Album Cover">
+                    <div class="info-details">
+                        <h4>Raissa Anggiani</h4>
+                        <p>Check out Raissa Anggiani's latest album "Dreams" featuring her hit singles and new tracks.</p>
+                        <a href="https://open.spotify.com/intl-id/artist/11k3Y6uyixbyGfgPl8qZTZ" target="_blank" class="btn">Find Out More</a>
+                        <button onclick="goBack()" class="btn">Back</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+    
+
+
+<script>
+
+let progress = document.getElementById("progress");
+let song = document.getElementById("song");
+let ctrlIcon = document.getElementById("ctrlIcon");
+
+song.onloadedmetadata = function(){
+    progress.max = song.duration;
+    progress.value = song.currentTime;
+}
+
+function playPause(){
+    if(ctrlIcon.classList.contains("fa-pause")){
+        song.pause();
+        ctrlIcon.classList.remove("fa-pause");
+        ctrlIcon.classList.add("fa-play");
+    }
+    else {
+        song.play();
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+    }  
+    
+}
+
+if(song.play()){
+    setInterval(()=>{
+        progress.value = song.currentTime;
+    },500)
+}
+
+progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+}
+
+function goToNextPage() {
+        window.location.href = "song2.html";
+    }
+
+    function goBack() {
+    window.location.href = "song.html";
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Reset and common styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: #ffff;
+  color: #fff;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo a span {
+  color: #ff6347;
+}
+
+nav ul li {
+  margin-right: 15px;
+  font-weight: 700;
+}
+
+nav ul li:hover {
+  background-color: grey;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.search-bar input {
+  padding: 5px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+}
+
+/* Main content styles */
+#section-title {
+  background-image: url(assets/background1.jpg);
+}
+
+.hero {
+  background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: white;
+  background-color: black;
+  margin-left: 325px;
+  border-radius: 5px;
+  width: 20em;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: white;
+  background-color: black;
+  margin-left: 475px;
+  border-radius: 5px;
+  width: 25em;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#section-featured {
+  background-image: url(assets/background2.jpeg);
+}
+
+.featured {
+  color: white;
+  padding: 50px;
+}
+
+.featured h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.playlist-container {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.playlist {
+  width: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.playlist img {
+  width: 100%;
+  height: auto;
+  box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.75);
+}
+
+.playlist h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+}
+
+.premium-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}

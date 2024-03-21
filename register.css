@@ -1,0 +1,121 @@
+/* CSS untuk fitur halaman utama */
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.feature {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.feature h2 {
+    margin-bottom: 10px;
+}
+
+/* CSS yang sebelumnya */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://w0.peakpx.com/wallpaper/564/890/HD-wallpaper-in-the-name-of-music-android-retro-spotify.jpg');
+    background-size: cover;
+    filter: grayscale(100%);
+    z-index: -1;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Warna hijau */
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #3e8e41; /* Warna hijau lebih gelap saat hover */
+}
+
+p {
+    color: #ffffff;
+}
+
+a {
+    color: #007bff; /* Warna biru */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

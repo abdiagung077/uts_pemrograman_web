@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login/Register - Spotify</title>
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+<div class="background"></div>
+<div class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY7pXo4rWgtiRfGFUo-wsF1Sl8XFo8BmZnHb9bJ28T8bs_YR_kItWRbqDtGjiCaWX3DxY&usqp=CAU" alt="Spotify Logo" class="logo">
+    <form id="registerForm" action="#" method="post" style="display: none;">
+        <div id="registerSection">
+            <h1>Register</h1>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" placeholder="Enter your name">
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" placeholder="Enter your address">
+            <label for="no_telp">No_telp:</label>
+            <input type="tel" id="no_telp" placeholder="Enter your phone number">
+            <label for="registerEmail">Email:</label>
+            <input type="email" id="registerEmail" placeholder="Enter your email">
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" placeholder="Enter your password">
+            <button type="button" onclick="register()">Create Account</button>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+        </div>
+    </form>
+    <form id="loginForm" action="#" method="post" style="display: none;">
+        <div id="loginSection">
+            <h1>Login</h1>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+            <button type="button" onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Create one here</a></p>
+        </div>
+    </form>    
+
+    <!-- Section for View Profile -->
+    <div id="viewProfileSection" style="display: none;">
+        <h1>Profile</h1>
+        <p>Explore your profile options.</p>
+        <button onclick="goToSignUp()" class="small-button">Sign up</button>
+        <button onclick="goToSignIn()" class="small-button">Sign in</button>
+    </div>
+
+    <!-- Tambahkan elemen untuk halaman utama -->
+    <div id="homePage">
+        <h1>Welcome to Spotify!</h1>
+        <p>Explore, Listen, and Discover Music.</p>
+        <a href="index.html" class="large-button">Go to Main Menu</a>
+        <button onclick="goToViewProfile()" class="small-button">View Profile</button>
+    </div>
+
+</div>
+
+<script>
+// Tampilkan halaman utama saat halaman dimuat
+document.getElementById('homePage').style.display = 'block';
+
+function showRegister() {
+    document.getElementById('registerForm').style.display = 'block';
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('homePage').style.display = 'none';
+    document.getElementById('viewProfileSection').style.display = 'none'; // Sembunyikan view profile saat menampilkan form register
+}
+
+function showLogin() {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('homePage').style.display = 'none';
+    document.getElementById('viewProfileSection').style.display = 'none'; // Sembunyikan view profile saat menampilkan form login
+}
+
+function register() {
+    alert('Selamat! Akun Anda telah berhasil dibuat. Anda sekarang dapat login dan mulai menikmati layanan kami');
+    document.getElementById('registerForm').reset();
+    showLogin();
+}
+
+function login() {
+    alert('Login successful!');
+    document.getElementById('loginForm').reset();
+    document.getElementById('homePage').style.display = 'block'; // Tampilkan halaman utama setelah login berhasil
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('viewProfileSection').style.display = 'none'; // Sembunyikan view profile setelah login berhasil
+}
+
+function goToSignUp() {
+    showRegister();
+}
+
+function goToSignIn() {
+    showLogin();
+}
+
+function goToViewProfile() {
+    document.getElementById('viewProfileSection').style.display = 'block';
+    document.getElementById('homePage').style.display = 'none';
+}
+</script>
+</body>
+</html>
